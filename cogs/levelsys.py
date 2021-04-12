@@ -29,8 +29,8 @@ class levelsys(commands.Cog):
             await self.level_up(level, message.author, message)
             with open('level.json', 'w') as f:
                 json.dump(level, f,indent=4)
-		else:
-			pass
+	else:
+		pass
                 
         
 
