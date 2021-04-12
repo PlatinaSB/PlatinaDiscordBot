@@ -19,7 +19,7 @@ class levelsys(commands.Cog):
     @commands.guild_only()
     async def on_message(self, message):
         if isinstance(message.channel, discord.DMChannel)==True:
-            print("dm is bloked for leveling")
+            await message.channel.send("dm is bloked for leveling")
             return
         if message.author.bot == False:
             with open('level.json', 'r') as f:
