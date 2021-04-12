@@ -1,0 +1,2 @@
+# PlatinaDiscordBot
+still in develoment
