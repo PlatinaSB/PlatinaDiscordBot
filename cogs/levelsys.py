@@ -30,7 +30,7 @@ class levelsys(commands.Cog):
             with open('level.json', 'w') as f:
                 json.dump(level, f,indent=4)
 	else:
-		pass
+		pass 
                 
         
 
