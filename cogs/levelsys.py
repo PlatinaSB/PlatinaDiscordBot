@@ -3,6 +3,15 @@ from discord.ext import commands
 import json
 from discord import guild
 
+def get_level_from_xp(xp):
+    lvls_xp = [5*(i**2)+50*i+100 for i in range(200)]
+    remaining_xp = int(xp)
+    lvl = 0
+    while remaining_xp >= lvls_xp[lvl]:
+        remaining_xp -= lvls_xp[lvl]
+        lvl += 1
+    return lvl
+
 class levelsys(commands.Cog):
     def __init__(self, client):
         self.client = client
@@ -51,9 +60,12 @@ class levelsys(commands.Cog):
     async def level_up(self, level, user, message):
         experience = level[f'{message.guild.id}'][f'{user.id}']['experience']
         lvl_start = level[f'{message.guild.id}'][f'{user.id}']['level']
-        lvl_end = int(experience ** (1/4))
-        if lvl_start < lvl_end:
+        lvl_end = get_level_from_xp(experience)
+        if lvl_start < get_level_from_xp(experience):
             await message.channel.send(f'{user.mention} has leveled up to level {lvl_end}')
+            level[f'{message.guild.id}'][f'{user.id}']['level'] = lvl_end
+        if lvl_start > get_level_from_xp(experience):
+            await message.channel.send(f'{user.mention} has leveled down to level {lvl_end}')
             level[f'{message.guild.id}'][f'{user.id}']['level'] = lvl_end
 
 
