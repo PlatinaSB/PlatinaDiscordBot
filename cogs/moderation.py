@@ -120,13 +120,14 @@ class moderation(commands.Cog):
 
     #warn
     @commands.command()
+    @commands.guild_only()
     @commands.has_guild_permissions(ban_members=True, kick_members=True)
     async def warn(self, ctx, user:discord.Member, *,reason=None):
-        with open('warnlist.json', 'r') as f:
+        with open('./jsondb/warnlist.json', 'r') as f:
             warnlist = json.load(f)
         await self.warn_member (ctx, warnlist, user, reason)
         await self.add_warn (ctx,warnlist,user,reason)
-        with open("warnlist.json",'w') as f:
+        with open('./jsondb/warnlist.json','w') as f:
             json.dump(warnlist,f, indent=4)
 
     async def warn_member(self,ctx,warnlist,user,reason):
@@ -141,7 +142,7 @@ class moderation(commands.Cog):
             warnlist[f'{ctx.guild.id}'][f'{user.id}']["warning"] = []
 
     async def add_warn(self, ctx, warnlist, user,reason):
-        with open('warnlist.json', 'r') as f:
+        with open('./jsondb/warnlist.json', 'r') as f:
             wls = json.load(f)  
             dtn = datetime.now()
             dt_s = dtn.strftime("%d/%m/%Y %H:%M:%S")        
