@@ -18,10 +18,10 @@ class levelsys(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self,member):
-        with open('level.json', 'r') as f:
+        with open('./jsondb/level.json', 'r') as f:
             level = json.load(f)
         await self.update_data(level, member)
-        with open('level.json', 'w') as f:
+        with open('./jsondb/level.json', 'w') as f:
             json.dump(level, f, indent=4)
 
     @commands.Cog.listener()
@@ -31,12 +31,12 @@ class levelsys(commands.Cog):
             await message.channel.send("dm is bloked for leveling")
             return
         if message.author.bot == False:
-            with open('level.json', 'r') as f:
+            with open('./jsondb/level.json', 'r') as f:
                 level = json.load(f)
             await self.update_data(level, message.author, message)
             await self.add_experience(level, message.author, 4, message)
             await self.level_up(level, message.author, message)
-            with open('level.json', 'w') as f:
+            with open('./jsondb/level.json', 'w') as f:
                 json.dump(level, f,indent=4)
         else:
             pass 
