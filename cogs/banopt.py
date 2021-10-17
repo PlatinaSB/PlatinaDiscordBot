@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import json
 
-class unban_semua_member(commands.cog):
+class banopt(commands.cog):
     def __init__(self, client):
         self.client = client
 
@@ -41,11 +41,11 @@ class unban_semua_member(commands.cog):
         async def updatelist(self,message):
             if str(f"{message.guild.id}") not in listban:
                 listban[f'{message.guild.id}'] = ['readyban']
-                listban[f'{message.guild.id}']['readyban'] = id
+                listban[f'{message.guild.id}']['readyban'] = {id}
             elif id not in listban[f'{message.guild.id}']['readyban']:
-                listban[f'{message.guild.id}']['readyban'] = id
+                listban[f'{message.guild.id}']['readyban'] = {id}
         
     
 
 def setup(client):
-    client.add_cog(unban_semua_member(client))
+    client.add_cog(banopt(client))
