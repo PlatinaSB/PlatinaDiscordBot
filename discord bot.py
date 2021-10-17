@@ -54,26 +54,26 @@ async def roll(ctx):
 @client.command()
 async def guildid(ctx):
     await ctx.send (f'{ctx.message.guild.id}')
-"""
-@client.command()
-async def infog(ctx):
-    avrurl = client.user.avatar_url
-    platinaid= 433019005146628107
-    await ctx.send (discord.Member.)
-"""
+
+# @client.command()
+# async def infog(ctx):
+#     avrurl = client.user.avatar_url
+#     platinaid= 433019005146628107
+#     await ctx.send (discord.Member.)
+
 
 
     
 
 
 
-@client.command()
-async def info(ctx):
-    embeds = discord.Embed(title = "Bot info", description= f"The Bot was created for testing purpose by PlatinaSB (<@433019005146628107>)" 
-    , color = discord.Color.red())
-    embeds.set_thumbnail(url = discord.Member.avatar_url)
+# @client.command()
+# async def info(ctx):
+#     embeds = discord.Embed(title = "Bot info", description= f"The Bot was created for testing purpose by PlatinaSB (<@433019005146628107>)" 
+#     , color = discord.Color.red())
+#     embeds.set_thumbnail(url = discord.Member.avatar_url)
 
-    await ctx.send (embed=embeds)
+#     await ctx.send (embed=embeds)
 
     
 
