@@ -7,7 +7,7 @@ import json
 import os
 from dotenv import load_dotenv, find_dotenv
 
-load_doten(find_dotenv())
+load_dotenv(find_dotenv())
 
 client = commands.Bot(command_prefix=commands.when_mentioned_or ('p?'))
 
