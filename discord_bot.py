@@ -23,21 +23,21 @@ async def on_ready():
 #cogs
 @client.command()
 async def load(ctx, extension):
-    if ctx.author.id == 433019005146628107:
+    if ctx.author.id == 000 : #add your discord uid
         client.load_extension (f"cogs.{extension}")
         client.wait_until_ready()
         await ctx.send (f"loaded cogs {extension}")
 
 @client.command()   
 async def unload(ctx, extension):
-    if ctx.author.id == 433019005146628107:
+    if ctx.author.id == 000 : #add your discord uid
         client.unload_extension(f"cogs.{extension}")
         client.wait_until_ready()
         await ctx.send (f"unloaded cogs {extension}")
 
 @client.command()
 async def reload(ctx, extension):
-    if ctx.author.id == 433019005146628107:
+    if ctx.author.id == 000 : #add your discord uid
         client.reload_extension(f"cogs.{extension}")
         client.wait_until_ready()
         await ctx.send (f"reloaded cogs {extension}")
