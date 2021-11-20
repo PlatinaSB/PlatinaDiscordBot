@@ -34,7 +34,7 @@ class levelsys(commands.Cog):
             with open('./jsondb/level.json', 'r') as f:
                 level = json.load(f)
             await self.update_data(level, message.author, message)
-            await self.add_experience(level, message.author, 4, message)
+            await self.add_experience(level, message.author, 80, message)
             await self.level_up(level, message.author, message)
             with open('./jsondb/level.json', 'w') as f:
                 json.dump(level, f,indent=4)

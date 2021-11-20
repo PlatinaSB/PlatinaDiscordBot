@@ -1,25 +1,25 @@
-import discord 
-from discord.ext import commands
-import json
+#import discord 
+#from discord.ext import commands
+#import json
 
-class banopt(commands.cog):
-    def __init__(self, client):
-        self.client = client
+#class banopt(commands.cog):
+#    def __init__(self, client):
+#        self.client = client
 
-    @commands.command()
-    async def usm(self, ctx):
-        await ctx.send ("cogs usm is loaded")
+    #@commands.command()
+    #async def usm(self, ctx):
+    #    await ctx.send ("cogs usm is loaded")
 
-    @commands.command()
-    async def secret_unban_all(self,ctx):
-        banned_users = await ctx.guild.bans()
-        for ban_entry in banned_users:
-            user = ban_entry.user
-            if (user.id) == (user.id):
-                await ctx.guild.unban(user)
-                await ctx.send (f"unbanning {user.id}")
-            else:
-                await ctx.send (f"failed to unban {user.id}")
+    #@commands.command()
+    #async def secret_unban_all(self,ctx):
+    #    banned_users = await ctx.guild.bans()
+    #    for ban_entry in banned_users:
+    #        user = ban_entry.user
+    #        if (user.id) == (user.id):
+    #            await ctx.guild.unban(user)
+    #            await ctx.send (f"unbanning {user.id}")
+    #        else:
+    #            await ctx.send (f"failed to unban {user.id}")
     
     #bans member when they joined
     # @commands.Cog.listener
@@ -47,5 +47,5 @@ class banopt(commands.cog):
         
     
 
-def setup(client):
-    client.add_cog(banopt(client))
+#def setup(client):
+#    client.add_cog(banopt(client))
