@@ -1,2 +1,4 @@
 .env
 testenv.py
+/cogs/__pycache__
+/jsondb/*
