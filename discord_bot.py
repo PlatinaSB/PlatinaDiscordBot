@@ -5,8 +5,10 @@ from discord.utils import get
 import random
 import json
 import os
+from dotenv import load_dotenv, find_dotenv
 
-TOKENll = 'your bot token'
+load_doten(find_dotenv())
+
 client = commands.Bot(command_prefix=commands.when_mentioned_or ('p?'))
 
 @client.event
@@ -80,4 +82,4 @@ async def guildid(ctx):
 
 #need to add clean, pruge, help, info, member count, server info, invite info,
 
-client.run(TOKENll)
+client.run(os.getenv('token'))
