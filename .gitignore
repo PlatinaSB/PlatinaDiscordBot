@@ -2,3 +2,5 @@
 testenv.py
 /cogs/__pycache__
 /jsondb/*
+*/test.py
+*test.py
